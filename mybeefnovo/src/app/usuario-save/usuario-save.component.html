@@ -1,0 +1,77 @@
+<app-menu>
+
+</app-menu>
+
+
+<fieldset>
+  <legend align="center">Cadastrar Usuario:</legend>
+  <form (submit)="save()">
+
+    <form>
+      <h3>{{!usuario.id?'Criar Usuario':'Editar Receita'}}</h3>
+    </form>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputNome4">Nome</label>
+        <input type="text" class="form-control" id="inputNome4" placeholder="nome" [(ngModel)]="usuario.nome">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCadastro">Email</label>
+        <input type="text" class="form-control" id="inputCadastro" placeholder="email" [(ngModel)]="usuario.email">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Login</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="login" [(ngModel)]="usuario.login">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputAddress">Senha</label>
+        <input type="password" class="form-control" id="inputAddress1" placeholder="senha" [(ngModel)]="usuario.senha">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputData">Telefone</label>
+        <input type="text" class="form-control" id="inputData" placeholder="telefone" [(ngModel)]="usuario.telefone">
+      </div>
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-4">
+        <label for="inputState">Cidade</label>
+        <select id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Pais</label>
+        <select id="inputState1" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputState">Localidade</label>
+        <select id="inputState2" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+        </select>
+      </div>
+    </div>
+
+    <app-button type="submit" class="btn btn-primary">
+      {{!usuario.id?'Criar':'Editar'}}
+    </app-button>
+  </form>
+
+</fieldset>
+
+
+

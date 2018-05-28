@@ -1,0 +1,72 @@
+<app-menu>
+
+</app-menu>
+
+<fieldset>
+<legend align="center">Cadastrar Propriedades:</legend>
+
+
+<form (submit)="save()">
+
+  <h3>{{!propriedade.id?'Criar Propriedade':'Editar Propriedade'}}</h3>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputNome4">Nome</label>
+      <input type="email" class="form-control" id="inputNome4" placeholder="Nome" [(ngModel)]="propriedade.nome">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCadastro">Numero Cadastro</label>
+      <input type="text" class="form-control" id="inputCadastro" placeholder="nro cadastro" [(ngModel)]="propriedade.nro_car">
+    </div>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="inputAddress">Localidade</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="localiade" [(ngModel)]="propriedade.localidade">
+  </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputCity">Tamanho</label>
+      <select id="inputCity" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Categoria Animal</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Pais</label>
+      <select id="inputState2" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">Cidades</label>
+      <select id="inputState1" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputData">Data</label>
+      <input type="text" class="form-control" id="inputData" [(ngModel)]="propriedade.data">
+    </div>
+  </div>
+
+  <app-button type="submit" class="btn btn-primary">
+    {{!propriedade.id?'Criar':'Editar'}}
+  </app-button>
+
+  </form>
+
+</fieldset>
+

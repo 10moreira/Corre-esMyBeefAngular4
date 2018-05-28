@@ -1,0 +1,52 @@
+<app-menu>
+
+</app-menu>
+
+<div class="mx-auto" style="width: 200px;">
+<form>
+  <h3>{{!receita.id?'Criar Receita':'Editar Receita'}}</h3>
+</form>
+<div class="row">
+  <!--<h3 *ngIf="!post.id; else h3_edit">Criar Categoria</h3>
+  <ng-template #h3_edit>
+    <h3>Editar Categorias</h3>
+  </ng-template>-->
+  <form class="form-horizontal" (submit)="save()">
+
+
+    <label for="exampleFormControlSelect1">Propiedades:</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Propriedade1</option>
+      <option>Propriedade2</option>
+      <option>Propriedade3</option>
+      <option>Propriedade4</option>
+      <option>Propriedade5</option>
+    </select>
+
+    <div class="form-group">
+      <label for="data" class="control-label">Data</label>
+      <input type="text" class="form-control" id="data" name="receita" [(ngModel)]="receita.data">
+    </div>
+
+    <div class="form-group">
+      <label for="quantidade" class="control-label">Quantidade</label>
+      <input type="text" class="form-control" id="quantidade" name="quantidade" [(ngModel)]="receita.quantidade">
+    </div>
+
+    <div class="form-group">
+      <label for="peso" class="control-label">Peso</label>
+      <input type="text" class="form-control" id="peso" name="peso" [(ngModel)]="receita.peso">
+    </div>
+
+    <div class="form-group">
+      <label for="preco" class="control-label">Preço</label>
+      <input type="text" class="form-control" id="preco" name="peso" [(ngModel)]="receita.preco">
+    </div>
+
+
+    <app-button type="submit" color="primary">
+      {{!receita.id?'Criar':'Editar'}}
+    </app-button>
+  </form>
+  </div>
+</div>

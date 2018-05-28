@@ -1,0 +1,66 @@
+<app-menu>
+
+
+</app-menu>
+
+<div>
+  <h3 align="center">Listagem de Categorias</h3>
+  <div class="col-md-12" align="right">
+    <app-button color="primary" routerLink="/categorias/create">
+      <app-glyph icon="plus"></app-glyph> Criar
+    </app-button>
+  </div>
+  <br/>
+  <br/>
+
+  <div class="col-md-12" *ngIf="message">
+    <app-alert [close]="true" [timeout]="4000">{{message}}</app-alert>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Código</th>
+      <th>Categoria</th>
+      <th>Ações</th>
+    </tr>
+    </thead>
+    <tbody>
+          <!--  {{Object.keys(categoria) | json}}
+            {{categoria | json}}-->
+
+    <tr *ngFor="let key of categoriaKeys(); let i = index">
+      <td>{{categoria[key].id}}</td>
+      <td>{{categoria[key].nome}}</td>
+      <td>
+      <a [routerLink]="['/categorias', categoria[key].id, 'edit']">
+        <app-glyph icon="pencil"></app-glyph>
+        Editar
+      </a> |
+        <!--<a [routerLink] = "['/categorias', categoria[key].id]" (click)="deletacategoria()">
+          <app-glyph icon="trash"></app-glyph>
+          Excluir
+        </a>-->
+      <a href="javascript:void(0)" (click)="openModal()">
+        <app-glyph icon="trash"></app-glyph>
+        Excluir
+      </a>
+    </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <app-modal>
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title">Mensagem de confirmação</h4>
+    </div>
+    <div class="modal-body" *ngIf="categoriaDelete">
+      <p>Deseja excluir esta Categoria<strong>  </strong>?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary" (click)="deletacategoria()">Deletar</button>
+    </div>
+  </app-modal>
+</div>
